@@ -1,34 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Services from './components/Services'
+import Clients from './components/Clients'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="app-container">
+      <Header />
+      <main>
+        <Hero />
+        <div id="about" className="container" style={{ padding: '4rem 1rem', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--color-primary)' }}>Who We Are</h2>
+          <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem', color: '#555' }}>
+            We introduce ourselves as Human Resource consultants with a strong database of candidates from entry-level to senior positions.
+            We help organizations find the right candidates for the right roles across PAN India.
+          </p>
+        </div>
+        <Services />
+        <Clients />
+      </main>
+      <Footer />
+    </div>
   )
 }
 
